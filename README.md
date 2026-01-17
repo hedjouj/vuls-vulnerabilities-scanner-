@@ -1,28 +1,30 @@
 # vuls-vulnerabilities-scanner-
-Installing and testing Vuls, an open source vulnerability scanner
 
-Installation
+
+## Installing and testing Vuls, an open source vulnerability scanner
+
+# Installation
 
 On ubuntu - First we update our system
 
 sudo apt-get update && sudo apt-get upgrade -y
 
-Install depencies
+# Install depencies
  sudo apt-get install debian-goodies reboot-notifier-y
 
- Download the installation script
+ # Download the installation script
  wget httpps://raw.githubusercontent.com/vulsio/vulsctl/master/install-host/install.sh
 
- Make the script executable
+ # Make the script executable
  chmod u+x install.sh
 
- Launch the installation 
+ # Launch the installation 
  sudo ./install.sh
 
- Check the install
+ # Check the install
  vuls help
 
-Now launch the scan with
+# Now launch the scan with
 sudo vuls scan localhost
 
  If you get this error: 
@@ -36,7 +38,7 @@ open /home/hedjouj/config.toml: no such file or directory"
 
 It means your configuration file is missing
 
-Then, create config.toml file
+# Then, create config.toml file
 nano config.tml 
 And write this in the text file: 
 [servers]
@@ -45,13 +47,10 @@ And write this in the text file:
 host = "localhost"
 port = "local"
 
-Now launch again the scan
+# Launch again the scan
 sudo vuls scan localhost
 
 And watch the results in the interactiv ui
 
 [SCREENSHOT] 
-
-Now let's analyze a distant server with RHEL 9 (Red Hate Entreprise Linux 9) 
-
 
